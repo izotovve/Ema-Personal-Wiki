@@ -1,6 +1,7 @@
 package com.janwillemboer.ema;
 
 import java.io.IOException;
+import java.util.Collection;
 import java.util.Stack;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -25,12 +26,15 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.janwillemboer.ema.dropbox.DropboxAuthentication;
 import com.janwillemboer.ema.dropbox.Sync;
 import com.janwillemboer.ema.dropbox.SyncPrefs;
 
 public class ViewPage extends Activity {
+
+	static final String	EMA_SEARCH_RESULT_BUFFER	= "Ema search result buffer";
 
 	public static final String TAG = "ViewPage";
 
@@ -92,6 +96,12 @@ public class ViewPage extends Activity {
 		setClickListenerOn(R.id.button_edit, new View.OnClickListener() {
 			public void onClick(View v) {
 				editPage();
+			}
+		});
+
+		setClickListenerOn(R.id.button_find, new View.OnClickListener() {
+			public void onClick(View v) {
+				findPage();
 			}
 		});
 
@@ -642,5 +652,32 @@ public class ViewPage extends Activity {
 		Intent i = new Intent(this,
 				com.janwillemboer.ema.dropbox.EditSyncPreferences.class);
 		startActivityForResult(i, LOGIN);
+	}
+	
+	private void findPage() {
+		TextView v =mHelper.find(R.id.findText);
+		String s=v.getText().toString();
+		if (s.equals("")) {
+			s=currentPage().PageName;
+		}
+		s=s.replace("_", " ");
+		String body="";
+		try {
+			Collection<WikiPage> mp=mHelper.getDal().matchedPages(s);
+			for (WikiPage p:mp){
+				body+="{"+p.getName().replace("_", " ")+"}\n\n";
+			}
+		} catch (IOException e) {
+			body=e.getLocalizedMessage();
+		}
+		try {
+			mHelper.getDal().savePage(EMA_SEARCH_RESULT_BUFFER, body);
+			loadUrlWithHistory(EMA_SEARCH_RESULT_BUFFER);
+		} catch (IOException e) {
+			Toast.makeText(
+					this,
+					getText(R.string.save_error) + "\n"
+							+ e.getLocalizedMessage(), Toast.LENGTH_LONG);
+		}
 	}
 }

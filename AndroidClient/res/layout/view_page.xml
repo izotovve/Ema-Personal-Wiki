@@ -7,23 +7,36 @@
 	<LinearLayout android:orientation="horizontal"
 		android:background="@android:color/darker_gray" android:paddingTop="4px"
 		android:gravity="center_horizontal" android:layout_width="fill_parent"
+		android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
 		android:layout_height="wrap_content">
 
 		<Button android:id="@+id/button_back" android:layout_width="wrap_content"
-			android:layout_height="36dip" android:textSize="12dip" android:text="@string/back"
+			android:layout_height="36dip" android:textSize="12dip" 
 			android:drawableLeft="@drawable/back" />
 
 		<Button android:id="@+id/button_home" android:layout_width="wrap_content"
-			android:layout_height="36dip" android:textSize="12dip" android:text="@string/home"
+			android:layout_height="36dip" android:textSize="12dip" 
 			android:drawableLeft="@drawable/gohome" />
 
 		<Button android:id="@+id/button_edit" android:layout_width="wrap_content"
-			android:layout_height="36dip" android:textSize="12dip" android:text="@string/edit"
+			android:layout_height="36dip" android:textSize="12dip" 
 			android:drawableLeft="@drawable/edit_select_all" />
 
 		<Button android:id="@+id/button_sync" android:layout_width="wrap_content"
-			android:layout_height="36dip" android:textSize="12dip" android:text="@string/sync"
+			android:layout_height="36dip" android:textSize="12dip" 
 			android:drawableLeft="@drawable/sync" />
+		<EditText
+		    android:id="@+id/findText"
+		    android:layout_width="fill_parent"
+		    android:layout_height="36dip" android:textSize="12dip" 
+		    android:layout_weight="1"
+		    android:ems="10" >
+		</EditText>
+
+		<Button android:id="@+id/button_find" android:layout_width="wrap_content"
+			android:layout_height="36dip" android:textSize="12dip" 
+			android:drawableLeft="@drawable/kfind" />
 
 	</LinearLayout>
 

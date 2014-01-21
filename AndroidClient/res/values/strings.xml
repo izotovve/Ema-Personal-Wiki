@@ -102,4 +102,6 @@
 	<string name="unknownMimetype">Could not find the app to view this file.</string>
 	<string name="v2_update_title">Ema update</string>
 	<string name="v2_update_text">EMA now uses the new Dropbox API.\n\All files must be downloaded from Dropbox; local changes will be lost. A backup of all files has been made to the SD card in the directory PersonalWiki-backup-v2.</string>
+	<string name="find">Find</string>
+	
 </resources>

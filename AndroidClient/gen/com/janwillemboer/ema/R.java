@@ -62,42 +62,45 @@ containing a value of this type.
         public static final int gohome=0x7f020005;
         public static final int help=0x7f020006;
         public static final int icon=0x7f020007;
-        public static final int settings=0x7f020008;
-        public static final int stock_copy=0x7f020009;
-        public static final int stock_exit=0x7f02000a;
-        public static final int sync=0x7f02000b;
+        public static final int kfind=0x7f020008;
+        public static final int settings=0x7f020009;
+        public static final int stock_copy=0x7f02000a;
+        public static final int stock_exit=0x7f02000b;
+        public static final int sync=0x7f02000c;
     }
     public static final class id {
-        public static final int about=0x7f06001d;
+        public static final int about=0x7f06001f;
         public static final int after_edit=0x7f060006;
         public static final int button_add=0x7f060011;
         public static final int button_back=0x7f060012;
         public static final int button_edit=0x7f060014;
+        public static final int button_find=0x7f060017;
         public static final int button_home=0x7f060013;
         public static final int button_sync=0x7f060015;
         public static final int cancel=0x7f06000e;
         public static final int confirm=0x7f06000d;
-        public static final int delete=0x7f060019;
-        public static final int dropbox_login=0x7f06001b;
+        public static final int delete=0x7f06001b;
+        public static final int dropbox_login=0x7f06001d;
         public static final int empty=0x7f060010;
-        public static final int help=0x7f06001c;
-        public static final int list_pages=0x7f06001a;
+        public static final int findText=0x7f060016;
+        public static final int help=0x7f06001e;
+        public static final int list_pages=0x7f06001c;
         public static final int listview=0x7f06000f;
         public static final int login_submit=0x7f060004;
         public static final int minutes_spinner=0x7f060008;
-        public static final int open=0x7f060018;
+        public static final int open=0x7f06001a;
         public static final int page_body=0x7f06000a;
         public static final int page_title=0x7f060009;
         public static final int periodically=0x7f060007;
-        public static final int quit=0x7f06001e;
+        public static final int quit=0x7f060020;
         public static final int save=0x7f06000b;
         public static final int text1=0x7f06000c;
         public static final int title=0x7f060001;
         public static final int title_message=0x7f060002;
         public static final int title_progressbar=0x7f060003;
         public static final int titlebar_layout=0x7f060000;
-        public static final int webview0=0x7f060016;
-        public static final int webview1=0x7f060017;
+        public static final int webview0=0x7f060018;
+        public static final int webview1=0x7f060019;
         public static final int when_starting_app=0x7f060005;
     }
     public static final class layout {
@@ -132,6 +135,7 @@ containing a value of this type.
         public static final int edit_css=0x7f04000f;
         public static final int enter_password=0x7f040011;
         public static final int enter_valid_email=0x7f040010;
+        public static final int find=0x7f040030;
         public static final int help=0x7f040012;
         public static final int help_text=0x7f040013;
         public static final int home=0x7f040014;
@@ -198,7 +202,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:backgroundColor
+          @attr name com.janwillemboer.ema:backgroundColor
         */
         public static final int com_admob_android_ads_AdView_backgroundColor = 0;
         /**
@@ -212,7 +216,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:keywords
+          @attr name com.janwillemboer.ema:keywords
         */
         public static final int com_admob_android_ads_AdView_keywords = 3;
         /**
@@ -227,7 +231,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:primaryTextColor
+          @attr name com.janwillemboer.ema:primaryTextColor
         */
         public static final int com_admob_android_ads_AdView_primaryTextColor = 1;
         /**
@@ -241,7 +245,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:refreshInterval
+          @attr name com.janwillemboer.ema:refreshInterval
         */
         public static final int com_admob_android_ads_AdView_refreshInterval = 4;
         /**
@@ -256,7 +260,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:secondaryTextColor
+          @attr name com.janwillemboer.ema:secondaryTextColor
         */
         public static final int com_admob_android_ads_AdView_secondaryTextColor = 2;
     };

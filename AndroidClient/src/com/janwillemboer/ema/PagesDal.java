@@ -3,6 +3,7 @@ package com.janwillemboer.ema;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -127,6 +128,18 @@ public class PagesDal {
 		return pages.values();
 	}
 
+	public Collection<WikiPage> matchedPages(String patt) throws IOException {
+		String pattern=patt.replace("_", " ");
+		Collection<WikiPage> allpages=fetchAll();
+		Collection<WikiPage> matchedpages=new ArrayList<WikiPage>();
+		for (WikiPage p : allpages) {
+			if (p.getBody().replace("_", " ").contains(pattern)&&!p.getName().replace("_", " ").equals(pattern)&&!p.getName().replace("_", " ").equals(ViewPage.EMA_SEARCH_RESULT_BUFFER)) {
+				matchedpages.add(p);
+			}
+		}
+		return matchedpages;
+	}
+	
 	public WikiPage fetchByName(String pageName) {
 		return new WikiPage(getFileForPage(pageName));
 	}
